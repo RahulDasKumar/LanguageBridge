@@ -9,28 +9,32 @@
         "48": "images/icon-48.png",
         "128": "images/icon-128.png"
     },
-    "background.service_worker":{
-        "scripts": [
-            "scripts/backend.js"
-        ],
-        "persistent": false
+    "background":{
+        "service_worker": "scripts/backend.js"
     },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://www.youtube.com/*"
-            ],
-            "js": [
-                "scripts/backend.js"
-            ]
-        }
-    ],
     "web_accessible_resources": [{
         "resources": ["config.json"],
         "matches": [
             "http://*/*",
             "https://*/*"
         ]
-    }]
+    }],
+     "content_scripts": [
+    {
+        "matches": [
+            "https://www.youtube.com/*"
+        ],
+        "js": [
+            "scripts/frontend.js"
+        ]
+    }
+],
+    "permissions":[
+        "activeTab"
+    ],
+    "externally_connectable":{
+        "ids": ["mppnhmcfdpccebcjjebhigdfdpedkflj"],
+        "matches":["https://www.youtube.com/*"]
+    }
     
 }
