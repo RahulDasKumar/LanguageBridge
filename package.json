@@ -1,0 +1,22 @@
+{
+  "name": "translatorextension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RahulDasKumar/LanguageBridge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RahulDasKumar/LanguageBridge/issues"
+  },
+  "homepage": "https://github.com/RahulDasKumar/LanguageBridge#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.11"
+  }
+}
