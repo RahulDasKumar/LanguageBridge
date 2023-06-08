@@ -75,8 +75,6 @@ chrome.runtime.onConnect.addListener( (port) => {
             console.log(msg.action)
     });
 });
-//Translate()
-
 
 
 
