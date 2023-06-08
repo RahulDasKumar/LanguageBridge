@@ -1,0 +1,58 @@
+.container {
+    position: relative;
+}
+
+.edge-effect {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0078d7;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edge-effect::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.edge-effect:hover {
+    background-color: #005a9e;
+}
+
+.edge-effect:active {
+    background-color: #004d8c;
+}
+
+.edge-effect:active::after {
+    opacity: 1;
+}
+
+.popup {
+    position: absolute !important;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: blue;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+    z-index: 99999;
+}
+
+.popup.active {
+    visibility: visible;
+    transition-delay: 0s;
+}
