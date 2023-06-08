@@ -15,8 +15,7 @@
     "web_accessible_resources": [{
         "resources": ["config.json"],
         "matches": [
-            "http://*/*",
-            "https://*/*"
+            "https://www.youtube.com/*"
         ]
     }],
      "content_scripts": [
@@ -27,14 +26,20 @@
         "js": [
             "scripts/frontend.js"
         ]
+        ,
+        "css":["css/youtube.css"]
     }
 ],
     "permissions":[
-        "activeTab"
+        "activeTab","scripting"
     ],
     "externally_connectable":{
         "ids": ["mppnhmcfdpccebcjjebhigdfdpedkflj"],
         "matches":["https://www.youtube.com/*"]
+    }
+    ,
+    "action":{
+        "default_popup": "popup.html"
     }
     
 }
