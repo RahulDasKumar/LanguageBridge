@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+
 .container {
     position: relative;
 }
@@ -38,21 +41,46 @@
 }
 
 .popup {
+    width: 300px;
+    height: 150px;
     position: absolute !important;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%);
-    padding: 20px;
-    background-color: blue;
-    color: #333;
+    border-radius:5%;
+    background-color: #4D4D4D;
+    color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0s linear 0.3s;
-    z-index: 99999;
+    display: none;
+    align-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Share Tech Mono', monospace;
+    /* transition: opacity 0.3s, visibility 0s linear 0.3s; */
+}
+
+.popup>div{
+    background-color: #000000;
+    border-radius: 5%;
+    color: aliceblue;
+    width: 50%;
+    height: 20%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+div::-webkit-scrollbar{
+    display: none;
+}
+.popup>div>p{
+    text-align: center;
+    align-content: center;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 .popup.active {
     visibility: visible;
     transition-delay: 0s;
+    display: flex;
 }
+
