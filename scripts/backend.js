@@ -67,12 +67,12 @@ async function Translate(text,target){
 
 
 
-
-
 chrome.runtime.onConnect.addListener( (port) => {
     console.assert(port.name === "translate");
     port.onMessage.addListener(function (msg) {
-            console.log(msg.action)
+    console.log(msg.action)
+    //chrome.runtime.sendMessage({message: msg.action})
+     port.postMessage({translatedText: msg.action})
     });
 });
 
