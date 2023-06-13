@@ -12,24 +12,25 @@
     "background":{
         "service_worker": "scripts/backend.js"
     },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.youtube.com/*"
+            ],
+            "js": [
+                "scripts/frontend.js"
+            ],
+            "css": [
+                "css/youtube.css"
+            ]
+        }
+    ],
     "web_accessible_resources": [{
         "resources": ["config.json"],
         "matches": [
             "https://www.youtube.com/*"
         ]
     }],
-     "content_scripts": [
-    {
-        "matches": [
-            "https://www.youtube.com/*"
-        ],
-        "js": [
-            "scripts/frontend.js"
-        ]
-        ,
-        "css":["css/youtube.css"]
-    }
-],
     "permissions":[
         "activeTab","scripting"
     ],
@@ -41,5 +42,9 @@
     "action":{
         "default_popup": "popup.html"
     }
+    ,
+    "host_permissions": [
+        "https://www.youtube.com/*"
+    ]
     
 }
